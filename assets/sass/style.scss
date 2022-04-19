@@ -1,0 +1,231 @@
+@import 'backgrounds';
+@import 'buttons';
+@import 'colors';
+@import 'fonts';
+@import 'mixins';
+@import 'reset';
+@import 'variables';
+
+.headerCenter{
+    width: 100%;
+    height: auto;
+   @include justifyBetween;
+}
+    nav{
+        width: 70%;
+        height: auto;
+        display: flex;
+        justify-content: flex-end;
+
+        ul{
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            li{
+                list-style: none;
+                font-size: $fontText;
+                padding: 10px;
+                margin: 5px;
+
+                a{
+                    text-decoration: none;
+                    color: $textGreen;
+
+                    &:hover{
+                        color: $textGreenHover;
+                    }
+                }
+    
+                &.btnNav{
+                    background: $bgBtnNav;
+                    border-radius: 30px;
+                    padding: 0;
+
+                    a {
+                        color: $textGray;
+                        display: block;
+                        padding: 10px 15px;
+                    }
+
+                    &.btnNav:hover{
+                        transition: .6s;
+                        background: $bgBtnNavHover ;
+                    }
+                }
+            }
+        }
+    }
+
+.slider{
+    width: 100%;
+    height: 500px;
+    background: #fc0;
+    display: flex;
+}
+.highlightsHome, .checkUpHome{
+    @include resetDiv;
+
+    .highlightsTitle, .checkUpTitle{
+        width: 100%;
+        height: auto;
+        margin: 2% 0;
+        text-align: center;
+
+        h2{
+            @include textTitle;
+        }
+    }
+
+}
+.highlights, .checkUp{
+    width: 100%;
+    height: auto;
+    @include justifyBetween;
+
+    .highligthsBox, .checkUpBox{
+        @include column;
+        @include highligthsBox;
+
+        .img{
+            @include center;
+            width: 120px;
+            height: 120px;
+            padding: 20px;
+            border-radius: 50%;
+            background: $bgWhite;
+
+            img{
+                @include img;
+            }
+        }
+
+        &:hover{
+            transition: .5s;
+            color: $textGray;
+            background: $bgHighligthsBoxHover;
+
+            h2{
+                color: $textGray;
+            }
+            p{
+                color: $textGray;
+            }
+
+        }
+
+        h2 {
+            font-size: $fontTitle;
+            color: $textGreen;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        p{
+            font-size: $fontText;
+            color: $textDarkGray;
+            text-align: center;
+            padding: 0 30px;
+        }
+
+    }
+}
+.bannerHome{
+    @include bannerHome;
+
+    .bannerHomeLeft{
+        width: 40%;
+        height: auto;
+        padding: $paddinUpDown;
+
+        h2 {
+            font-size: $fontBannerPezinhoHome;
+            text-transform: uppercase;
+            color: $textGray;
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            @extend h2;
+            font-size: $fontBannerPezinhoHomeDestaque;
+            font-weight: 100;
+        }
+        p {
+            color: $textGray;
+            font-size: $fontText;
+        }
+        .btnBannerHome {
+            background: $bgBbtBannerHome;
+            border: none;
+            border-radius: 30px;
+            
+            a {
+                text-decoration: none;
+                color: $textGray;
+                text-transform: uppercase;
+                display: block;
+                padding: 10px 30px;
+            }
+
+            &:hover{
+                transition: .7s;
+                background: $bgBbtBannerHomeHover;
+            }
+        }
+    }
+}
+
+footer{
+    @include resetFooter;
+}
+
+.footerInternal{
+    @include justifyBetweenFooter;
+
+    .footerLeft, .footerCenter, .footerRight{
+        width: 30%;
+    }
+    .footerLeft {
+        a{
+            @include footerLeftLogo;
+        }
+
+        span{
+            font-size: $fontTitleBlack;
+            display: inline-block;
+            margin: 2% 2% 0 0;
+
+            a{
+                text-decoration: none;
+                color: $textGreenHover;
+            }
+        }
+
+    }
+    .footerCenter{
+        background: none;
+        ul {
+            @include footerCenterUl;
+
+            li{
+                font-size: $fontText;
+                padding: 2% 0;
+                margin: 5px 0;
+                width: 100%;
+
+                a{
+                    display: block;
+                    text-decoration: none;
+                    color: $textDarkGray;
+                    padding: 5px;
+                    display: block;
+                }
+            }
+        }
+    }
+    .footerRight{
+        img{
+            @include img;
+        }
+    }
+}

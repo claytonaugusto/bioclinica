@@ -1,0 +1,78 @@
+@mixin justifyBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;    
+}
+@mixin justifyBetweenFooter{
+    display: flex;
+    justify-content: space-between;
+}
+@mixin justifyAround{
+    display: flex;
+    justify-content: space-around;
+}
+@mixin column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin resetDiv{
+    width: 100%;
+    height: auto;
+    margin: 2% 0;
+    padding: 1% 0;
+}
+@mixin resetFooter{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 2% 0;
+    background: $bgFooter;
+}
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin img {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+}
+@mixin textTitle{
+    font-size: $fontTitle;
+    color: $textGreen;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 0 24%;
+}
+@mixin highligthsBox {
+    width: 30%;
+    margin: 1% 0;
+    padding: $paddinUpDown;
+    background: $bgHighligthsBox;
+    border-radius: 8px;
+}
+@mixin bannerHome{
+    width: 100%;
+    min-height: 477px;
+    background: url('../images/backgrounds/bg-bannerHome.png');
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    @include justifyBetween;
+}
+@mixin footerCenterUl{
+    padding: 0 40px;
+    list-style-type: none;
+    justify-content: end;
+    align-items: center;
+}
+@mixin footerLeftLogo {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 2%;
+}
