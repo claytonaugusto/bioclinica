@@ -36,7 +36,7 @@
     </header>
 
     <section class="slider">
-        aqui vai o carrosel
+        Apenas um teste de configuração do GIT
     </section>
 
     <section class="highlightsHome">
