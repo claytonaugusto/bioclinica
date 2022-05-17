@@ -49,8 +49,19 @@
     </header>
 
     <section class="slider">
-        Apenas um teste de configuração do GIT
     </section>
+
+    <div class="carousel js-flickity" data-flickity-options='{ "imagesLoaded":"true", "autoPlay": 6000}'>
+        <div class="carousel-cell">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/259273/IMG_7314_web.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/259273/IMG_7315_web-710x450-2.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/259273/IMG_7314_web.jpg">
+        </div>
+    </div>
 
     <section class="highlightsHome">
         <div class="content">
@@ -128,47 +139,47 @@
                     <div class="img">
                         <a href="#"><img src="assets/images/icons/drop.png" alt="" srcset=""></a>
                     </div>
-                    <h2>check-up básico</h2>
-                    <p>Composto por 10 exames essenciais, entre eles: Hemograma completo, TGO, TGP, Glicose, entre
-                        outros</p>
+                    <h2><a href="#">check-up básico</a></h2>
+                    <p><a href="#">Composto por 10 exames essenciais, entre eles: Hemograma completo, TGO, TGP, Glicose, entre
+                            outros</a></p>
                 </div>
                 <div class="checkUpBox">
                     <div class="img">
                         <a href="#"><img src="assets/images/icons/woman.png" alt="" srcset=""></a>
                     </div>
-                    <h2>check-up mulher</h2>
-                    <p>Composto por 10 exames essenciais, entre eles: Hemograma completo, Lipidograma, Creatinina, entre
-                        outros</p>
+                    <h2><a href="#">check-up mulher</a></h2>
+                    <p><a href="#">Composto por 10 exames essenciais, entre eles: Hemograma completo, Lipidograma, Creatinina, entre
+                            outros</a></p>
                 </div>
                 <div class="checkUpBox">
                     <div class="img">
                         <a href="#"><img src="assets/images/icons/male.png" alt="" srcset=""></a>
                     </div>
-                    <h2>check-up homem</h2>
-                    <p>Composto pelos principais exames, entre eles: Hemograma, Sumário de urina, Parasitológico, entre
-                        outros</p>
+                    <h2><a href="#">check-up homem</a></h2>
+                    <p><a href="#">Composto pelos principais exames, entre eles: Hemograma, Sumário de urina, Parasitológico, entre
+                            outros</a></p>
                 </div>
                 <div class="checkUpBox">
                     <div class="img">
                         <a href="#"><img src="assets/images/icons/baby.png" alt="" srcset=""></a>
                     </div>
-                    <h2>check-up criança</h2>
-                    <p>Composto por 10 exames essenciais, entre eles: Hemograma completo, TGO, TGP, Glicose, entre
-                        outros</p>
+                    <h2><a href="#">check-up criança</a></h2>
+                    <p><a href="#">Composto por 10 exames essenciais, entre eles: Hemograma completo, TGO, TGP, Glicose, entre
+                            outros</a></p>
                 </div>
                 <div class="checkUpBox">
                     <div class="img">
                         <a href="#"><img src="assets/images/icons/couple.png" alt="" srcset=""></a>
                     </div>
-                    <h2>check-up pré-nupcial</h2>
-                    <p>Exames específicos como: Grupo sanguíneo, HBSAG (hepatite B), HCV, entre outros</p>
+                    <h2><a href="#">check-up pré-nupcial</a></h2>
+                    <p><a href="#">Exames específicos como: Grupo sanguíneo, HBSAG (hepatite B), HCV, entre outros</a></p>
                 </div>
                 <div class="checkUpBox">
                     <div class="img">
                         <a href="#"><img src="assets/images/icons/pregnant.png" alt="" srcset=""></a>
                     </div>
-                    <h2>check-up Gestante</h2>
-                    <p>Composto por 17 exames entre eles: Citomegalovírus, Toxoplasmose, entre outros</p>
+                    <h2><a href="#">check-up Gestante</a></h2>
+                    <p><a href="#">Composto por 17 exames entre eles: Citomegalovírus, Toxoplasmose, entre outros</a></p>
                 </div>
             </div>
         </div>
@@ -178,7 +189,9 @@
         <div class="content">
             <div class="footerInternal">
                 <div class="footerLeft">
-                    <a href="#"><img src="assets/images/logos/logotipo-bioclinica.png" alt="" srcset=""></a>
+                    <div class="footerLeftImg">
+                        <a href="#"><img src="assets/images/logos/logotipo-bioclinica.png" alt="" srcset=""></a>
+                    </div>
                     <span><a href="#"><i class="fa-brands fa-instagram"></i></a></span>
                     <span><a href="#"><i class="fa-brands fa-facebook"></a></i></span>
 
@@ -210,6 +223,9 @@
     </footer>
     <script src="assets/js/jquery-3.3.1.js"></script>
     <script src="assets/js/index.js"></script>
+
+    <script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://npmcdn.com/flickity@1.2/dist/flickity.min.css">
 </body>
 
 </html>

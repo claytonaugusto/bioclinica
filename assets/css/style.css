@@ -88,11 +88,33 @@ body {
   display: none;
 }
 
-.slider {
+.carousel .flickity-prev-next-button {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+}
+.carousel .flickity-page-dots {
+  bottom: -22px;
+}
+.carousel .flickity-page-dots .dot {
+  height: 4px;
+  width: 40px;
+  margin: 0;
+  border-radius: 0;
+  background: #2b9348;
+}
+.carousel .carousel-cell {
   width: 100%;
-  height: 500px;
-  background: #fc0;
-  display: flex;
+  counter-increment: carousel-cell;
+}
+.carousel .carousel-cell img {
+  width: 100%;
+  height: auto;
+}
+.carousel .carousel:after {
+  content: "flickity";
+  display: none;
+  /* hide :after */
 }
 
 .highlightsHome,
@@ -145,6 +167,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 30%;
+  min-height: 350px;
   margin: 1% 0;
   padding: 2% 0;
   background: #fcfcfc;
@@ -163,10 +186,17 @@ body {
   border-radius: 50%;
   background: #fff;
 }
-.highlights .highligthsBox .img img,
-.highlights .checkUpBox .img img,
-.checkUp .highligthsBox .img img,
-.checkUp .checkUpBox .img img {
+.highlights .highligthsBox .img a,
+.highlights .checkUpBox .img a,
+.checkUp .highligthsBox .img a,
+.checkUp .checkUpBox .img a {
+  display: block;
+  padding: 10px;
+}
+.highlights .highligthsBox .img a img,
+.highlights .checkUpBox .img a img,
+.checkUp .highligthsBox .img a img,
+.checkUp .checkUpBox .img a img {
   max-width: 100%;
   max-height: 100%;
   display: flex;
@@ -197,6 +227,12 @@ body {
 .checkUp .checkUpBox:hover p {
   color: #f0f0f0;
 }
+.highlights .highligthsBox:hover a,
+.highlights .checkUpBox:hover a,
+.checkUp .highligthsBox:hover a,
+.checkUp .checkUpBox:hover a {
+  color: #f0f0f0;
+}
 .highlights .highligthsBox h2, .highlights .highligthsBox .bannerHome .bannerHomeLeft h1, .bannerHome .bannerHomeLeft .highlights .highligthsBox h1,
 .highlights .checkUpBox h2,
 .highlights .checkUpBox .bannerHome .bannerHomeLeft h1,
@@ -208,18 +244,38 @@ body {
 .checkUp .checkUpBox .bannerHome .bannerHomeLeft h1,
 .bannerHome .bannerHomeLeft .checkUp .checkUpBox h1 {
   font-size: 20px;
-  color: #80b918;
   text-transform: uppercase;
   text-align: center;
+  color: #80b918;
+}
+.highlights .highligthsBox h2 a, .highlights .highligthsBox .bannerHome .bannerHomeLeft h1 a, .bannerHome .bannerHomeLeft .highlights .highligthsBox h1 a,
+.highlights .checkUpBox h2 a,
+.highlights .checkUpBox .bannerHome .bannerHomeLeft h1 a,
+.bannerHome .bannerHomeLeft .highlights .checkUpBox h1 a,
+.checkUp .highligthsBox h2 a,
+.checkUp .highligthsBox .bannerHome .bannerHomeLeft h1 a,
+.bannerHome .bannerHomeLeft .checkUp .highligthsBox h1 a,
+.checkUp .checkUpBox h2 a,
+.checkUp .checkUpBox .bannerHome .bannerHomeLeft h1 a,
+.bannerHome .bannerHomeLeft .checkUp .checkUpBox h1 a {
+  text-decoration: none;
+  color: #80b918;
 }
 .highlights .highligthsBox p,
 .highlights .checkUpBox p,
 .checkUp .highligthsBox p,
 .checkUp .checkUpBox p {
   font-size: 16px;
-  color: #717171;
   text-align: center;
   padding: 0 30px;
+  color: #717171;
+}
+.highlights .highligthsBox p a,
+.highlights .checkUpBox p a,
+.checkUp .highligthsBox p a,
+.checkUp .checkUpBox p a {
+  text-decoration: none;
+  color: #717171;
 }
 
 .bannerHome {
@@ -346,7 +402,7 @@ footer {
   display: flex;
 }
 
-@media (max-width: 853px) {
+@media (max-width: 906px) {
   .headerCenter {
     width: 100%;
     margin: 2% 0;
@@ -362,10 +418,11 @@ footer {
   .headerCenter nav {
     position: absolute;
     width: 100%;
-    height: calc(100vh - 90px);
-    top: 90px;
+    height: calc(100vh - 80px);
+    top: 80px;
     left: -100%;
     transition: 0.5s;
+    z-index: 9999;
   }
   .headerCenter nav ul {
     display: block;
@@ -402,6 +459,136 @@ footer {
   }
   .headerCenter nav ul .active ul li a {
     color: #900;
+  }
+
+  .highlightsHome .highlightsTitle h2, .highlightsHome .highlightsTitle .bannerHome .bannerHomeLeft h1, .bannerHome .bannerHomeLeft .highlightsHome .highlightsTitle h1,
+.highlightsHome .checkUpTitle h2,
+.highlightsHome .checkUpTitle .bannerHome .bannerHomeLeft h1,
+.bannerHome .bannerHomeLeft .highlightsHome .checkUpTitle h1,
+.checkUpHome .highlightsTitle h2,
+.checkUpHome .highlightsTitle .bannerHome .bannerHomeLeft h1,
+.bannerHome .bannerHomeLeft .checkUpHome .highlightsTitle h1,
+.checkUpHome .checkUpTitle h2,
+.checkUpHome .checkUpTitle .bannerHome .bannerHomeLeft h1,
+.bannerHome .bannerHomeLeft .checkUpHome .checkUpTitle h1 {
+    width: 100%;
+    padding: 0;
+    font-size: 18px;
+  }
+
+  .bannerHome {
+    width: 100%;
+    min-height: 477px;
+    background: url("../images/backgrounds/bg-bannerHome.png");
+    background-position: 40% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .bannerHome .bannerHomeLeft {
+    width: 50%;
+  }
+
+  .highlights .highligthsBox,
+.highlights .checkUpBox,
+.checkUp .highligthsBox,
+.checkUp .checkUpBox {
+    width: 48%;
+  }
+}
+@media (max-width: 836px) {
+  .footerInternal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footerInternal .footerLeft {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footerInternal .footerLeft .footerLeftImg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .footerInternal .footerLeft span {
+    font-size: 30px;
+  }
+  .footerInternal .footerCenter {
+    width: 100%;
+  }
+  .footerInternal .footerCenter ul {
+    padding: 0;
+  }
+  .footerInternal .footerCenter ul li {
+    padding: 1% 0;
+    margin: 5px 0;
+  }
+  .footerInternal .footerRight {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .footerInternal .footerRight img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .bannerHome {
+    width: 100%;
+    min-height: 477px;
+    background: url("../images/backgrounds/bg-bannerHome.png");
+    background-position: 20% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .bannerHome .bannerHomeLeft {
+    width: 100%;
+    text-align: center;
+  }
+  .bannerHome .bannerHomeLeft .btnBannerHome {
+    width: 50%;
+    padding: 10px 0;
+  }
+  .bannerHome .bannerHomeLeft .btnBannerHome:hover {
+    background: #fcfcfc;
+  }
+  .bannerHome .bannerHomeLeft .btnBannerHome a:hover {
+    color: #2b9348;
+  }
+
+  .highlights .highligthsBox,
+.highlights .checkUpBox,
+.checkUp .highligthsBox,
+.checkUp .checkUpBox {
+    width: 99%;
+    min-height: auto;
+    padding: 5% 0;
+  }
+
+  .footerRight {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footerRight img {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 

@@ -97,12 +97,44 @@
     }
 }
 
-.slider {
-    width: 100%;
-    height: 500px;
-    background: #fc0;
-    display: flex;
+.carousel {
+
+    .flickity-prev-next-button {
+        width: 50px;
+        height: 50px;
+        background: transparent;
+    }
+
+    .flickity-page-dots {
+        bottom: -22px;
+    }
+
+    .flickity-page-dots .dot {
+        height: 4px;
+        width: 40px;
+        margin: 0;
+        border-radius: 0;
+        background: $textGreenHover;
+    }
+
+    .carousel-cell {
+        width: 100%;
+        counter-increment: carousel-cell;
+    }
+
+    .carousel-cell img {
+        width: 100%;
+        height: auto;
+    }
+
+    .carousel:after {
+        content: 'flickity';
+        display: none;
+        /* hide :after */
+    }
 }
+
+
 
 .highlightsHome,
 .checkUpHome {
@@ -141,9 +173,15 @@
             border-radius: 50%;
             background: $bgWhite;
 
-            img {
-                @include img;
+            a {
+                display: block;
+                padding: 10px;
+
+                img {
+                    @include img;
+                }
             }
+
         }
 
         &:hover {
@@ -159,20 +197,36 @@
                 color: $textGray;
             }
 
+            a {
+                color: $textGray;
+            }
+
         }
 
         h2 {
             font-size: $fontTitle;
-            color: $textGreen;
             text-transform: uppercase;
             text-align: center;
+            color: $textGreen;
+
+            a {
+                text-decoration: none;
+                color: $textGreen;
+            }
+
         }
 
         p {
             font-size: $fontText;
-            color: $textDarkGray;
             text-align: center;
             padding: 0 30px;
+            color: $textDarkGray;
+
+            a {
+                text-decoration: none;
+                color: $textDarkGray;
+
+            }
         }
 
     }
@@ -300,7 +354,7 @@ footer {
     }
 }
 
-@media (max-width: 853px) {
+@media (max-width: 906px) {
     .headerCenter {
         width: 100%;
         margin: 2% 0;
@@ -318,11 +372,12 @@ footer {
         nav {
             position: absolute;
             width: 100%;
-            height: calc(100vh - 90px);
-            top: 90px;
+            height: calc(100vh - 80px);
+            top: 80px;
             left: -100%;
             transition: .5s;
-            
+            z-index: 9999;
+
             ul {
                 display: block;
                 margin-top: 2.5%;
@@ -338,9 +393,8 @@ footer {
                         padding: 10px;
                         margin: 10px auto;
                     }
-                    &:nth-last-child(n)
 
-                    a {
+                    &:nth-last-child(n) a {
                         margin: 0;
                         padding: 5px 0;
                         text-align: center;
@@ -361,7 +415,7 @@ footer {
                         border: none;
                         border-bottom: 1px solid rgba(148, 148, 148, 0.158);
 
-    
+
 
                         a {
                             color: #900;
@@ -374,6 +428,132 @@ footer {
 
             }
 
+        }
+    }
+
+    .highlightsHome,
+    .checkUpHome {
+
+        .highlightsTitle,
+        .checkUpTitle {
+            h2 {
+                width: 100%;
+                padding: 0;
+                font-size: $fontTitleResponsive;
+            }
+        }
+    }
+
+    .bannerHome {
+        @include bannerHomeResponsive;
+
+        .bannerHomeLeft {
+            width: 50%;
+        }
+    }
+
+    .highlights,
+    .checkUp {
+
+        .highligthsBox,
+        .checkUpBox {
+            width: 48%;
+        }
+    }
+
+}
+
+@media (max-width: 836px) {
+    .footerInternal {
+        @include column;
+
+        .footerLeft {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .footerLeftImg {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            span {
+                font-size: 30px;
+            }
+
+        }
+
+        .footerCenter {
+            width: 100%;
+
+            ul {
+                padding: 0;
+
+                li {
+                    padding: 1% 0;
+                    margin: 5px 0;
+                }
+            }
+        }
+
+        .footerRight {
+            width: 100%;
+            @include justifyBetween;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .bannerHome {
+        @include bannerHomeResponsiveFinal;
+
+        .bannerHomeLeft {
+            width: 100%;
+            text-align: center;
+
+            .btnBannerHome {
+                width: 50%;
+                padding: 10px 0;
+
+                &:hover {
+                    background: $bgHighligthsBox;
+                }
+
+                a:hover {
+                    color: $textGreenHover;
+                }
+            }
+        }
+
+    }
+
+    .highlights,
+    .checkUp {
+
+        .highligthsBox,
+        .checkUpBox {
+            width: 99%;
+            min-height: auto;
+            padding: 5% 0;
+        }
+    }
+
+    .footerRight {
+        width: 100%;
+        @include column;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
         }
     }
 
