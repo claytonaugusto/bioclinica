@@ -6,39 +6,45 @@
 @import 'reset';
 @import 'variables';
 
-.headerCenter{
+.headerCenter {
     width: 100%;
     height: auto;
-   @include justifyBetween;
-}
-    nav{
-        width: 70%;
-        height: auto;
-        display: flex;
-        justify-content: flex-end;
+    @include justifyBetween;
 
-        ul{
-            width: 100%;
-            list-style-type: none;
+    .logoTop {
+        display: flex;
+
+        img {
             display: flex;
-            justify-content: end;
-            align-items: center;
-            li{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    nav {
+        ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            z-index: 9999;
+
+            li {
                 list-style: none;
-                font-size: $fontText;
+                position: relative;
                 padding: 10px;
                 margin: 5px;
 
-                a{
+                a {
                     text-decoration: none;
                     color: $textGreen;
+                    display: block;
 
-                    &:hover{
+                    &:hover {
                         color: $textGreenHover;
                     }
                 }
-    
-                &.btnNav{
+
+                &.btnNav {
                     background: $bgBtnNav;
                     border-radius: 30px;
                     padding: 0;
@@ -49,46 +55,85 @@
                         padding: 10px 15px;
                     }
 
-                    &.btnNav:hover{
+                    &.btnNav:hover {
                         transition: .6s;
-                        background: $bgBtnNavHover ;
+                        background: $bgBtnNavHover;
                     }
                 }
+
+                ul {
+                    position: absolute;
+                    left: 0;
+                    display: none;
+
+                    li {
+                        display: block;
+                        width: 200px;
+                        margin: 5px 0;
+                        border-bottom: 1px solid rgba(148, 148, 148, 0.158);
+
+                        &:nth-child(3) {
+                            border: none;
+                        }
+                    }
+                }
+
             }
+
+            .active ul {
+                display: block;
+                background: #fff;
+            }
+
         }
     }
 
-.slider{
+    .menu-toggle {
+        color: $textGreen;
+        font-size: 24px;
+        line-height: 50px;
+        cursor: pointer;
+        display: none;
+    }
+}
+
+.slider {
     width: 100%;
     height: 500px;
     background: #fc0;
     display: flex;
 }
-.highlightsHome, .checkUpHome{
+
+.highlightsHome,
+.checkUpHome {
     @include resetDiv;
 
-    .highlightsTitle, .checkUpTitle{
+    .highlightsTitle,
+    .checkUpTitle {
         width: 100%;
         height: auto;
         margin: 2% 0;
         text-align: center;
 
-        h2{
+        h2 {
             @include textTitle;
         }
     }
 
 }
-.highlights, .checkUp{
+
+.highlights,
+.checkUp {
     width: 100%;
     height: auto;
     @include justifyBetween;
 
-    .highligthsBox, .checkUpBox{
+    .highligthsBox,
+    .checkUpBox {
         @include column;
         @include highligthsBox;
 
-        .img{
+        .img {
             @include center;
             width: 120px;
             height: 120px;
@@ -96,20 +141,21 @@
             border-radius: 50%;
             background: $bgWhite;
 
-            img{
+            img {
                 @include img;
             }
         }
 
-        &:hover{
+        &:hover {
             transition: .5s;
             color: $textGray;
             background: $bgHighligthsBoxHover;
 
-            h2{
+            h2 {
                 color: $textGray;
             }
-            p{
+
+            p {
                 color: $textGray;
             }
 
@@ -121,7 +167,8 @@
             text-transform: uppercase;
             text-align: center;
         }
-        p{
+
+        p {
             font-size: $fontText;
             color: $textDarkGray;
             text-align: center;
@@ -130,10 +177,11 @@
 
     }
 }
-.bannerHome{
+
+.bannerHome {
     @include bannerHome;
 
-    .bannerHomeLeft{
+    .bannerHomeLeft {
         width: 40%;
         height: auto;
         padding: $paddinUpDown;
@@ -145,20 +193,23 @@
             padding: 0;
             margin: 0;
         }
+
         h1 {
             @extend h2;
             font-size: $fontBannerPezinhoHomeDestaque;
             font-weight: 100;
         }
+
         p {
             color: $textGray;
             font-size: $fontText;
         }
+
         .btnBannerHome {
             background: $bgBbtBannerHome;
             border: none;
             border-radius: 30px;
-            
+
             a {
                 text-decoration: none;
                 color: $textGray;
@@ -167,7 +218,7 @@
                 padding: 10px 30px;
             }
 
-            &:hover{
+            &:hover {
                 transition: .7s;
                 background: $bgBbtBannerHomeHover;
             }
@@ -175,57 +226,155 @@
     }
 }
 
-footer{
+footer {
     @include resetFooter;
 }
 
-.footerInternal{
+.info {
+    width: 100%;
+    height: auto;
+    @include center;
+
+    p {
+        font-size: $fontSmall;
+        color: $textDarkGray;
+    }
+}
+
+.footerInternal {
     @include justifyBetweenFooter;
 
-    .footerLeft, .footerCenter, .footerRight{
+    .footerLeft,
+    .footerCenter,
+    .footerRight {
         width: 30%;
     }
+
     .footerLeft {
-        a{
+        a {
             @include footerLeftLogo;
         }
 
-        span{
+        span {
             font-size: $fontTitleBlack;
             display: inline-block;
             margin: 2% 2% 0 0;
 
-            a{
+            a {
                 text-decoration: none;
                 color: $textGreenHover;
             }
         }
 
     }
-    .footerCenter{
+
+    .footerCenter {
         background: none;
+
         ul {
             @include footerCenterUl;
 
-            li{
+            li {
                 font-size: $fontText;
                 padding: 2% 0;
                 margin: 5px 0;
                 width: 100%;
+                text-align: center;
 
-                a{
+                a {
                     display: block;
                     text-decoration: none;
                     color: $textDarkGray;
+                    margin: 0;
                     padding: 5px;
                     display: block;
                 }
             }
         }
     }
-    .footerRight{
-        img{
+
+    .footerRight {
+        img {
             @include img;
         }
     }
+}
+
+@media (max-width: 853px) {
+    .headerCenter {
+        width: 100%;
+        margin: 2% 0;
+
+        .menu-toggle {
+            display: block;
+            z-index: 9999;
+            margin: 1%;
+        }
+
+        .active {
+            left: 0;
+        }
+
+        nav {
+            position: absolute;
+            width: 100%;
+            height: calc(100vh - 90px);
+            top: 90px;
+            left: -100%;
+            transition: .5s;
+            
+            ul {
+                display: block;
+                margin-top: 2.5%;
+                background: #fff;
+                padding: 1% 0;
+
+                li {
+                    line-height: 25px;
+                    border-bottom: 1px solid rgba(148, 148, 148, 0.158);
+
+                    &.btnNav {
+                        width: 50%;
+                        padding: 10px;
+                        margin: 10px auto;
+                    }
+                    &:nth-last-child(n)
+
+                    a {
+                        margin: 0;
+                        padding: 5px 0;
+                        text-align: center;
+                    }
+                }
+
+
+                .active ul {
+                    position: relative;
+                    background: $bgHighligthsBox;
+                    margin: 0;
+                    padding: 0;
+                    border: 5px;
+
+                    li {
+                        width: 98%;
+                        text-align: center;
+                        border: none;
+                        border-bottom: 1px solid rgba(148, 148, 148, 0.158);
+
+    
+
+                        a {
+                            color: #900;
+
+
+                        }
+
+                    }
+                }
+
+            }
+
+        }
+    }
+
 }

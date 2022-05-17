@@ -16,20 +16,33 @@
 
         <div class="content">
             <div class="headerCenter">
+
                 <div class="logoTop">
                     <a href="#"><img src="assets/images/logos/logotipo-bioclinica.png" alt="" srcset=""></a>
                 </div>
+
                 <nav>
                     <ul>
-                        <li><a href="#">Institucional</a></li>
-                        <li><a href="#">Exames</a></li>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li class="sub-menu"><a href="#">Institucional</a>
+                            <ul>
+                                <li><a href="#">Acreditação</a></li>
+                                <li><a href="#">Nossa Equipe</a></li>
+                                <li><a href="#">Trabalhe Conosco</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Convênios</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Contato</a></li>
                         <li class="btnNav"><a href="#">Resultados</a></li>
-
                     </ul>
                 </nav>
+
+
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div><!-- menu toggle -->
+
             </div>
         </div>
 
@@ -172,12 +185,17 @@
                 </div>
                 <div class="footerCenter">
                     <ul>
-                        <li><a href="#">Institucional</a></li>
-                        <li><a href="#">Exames</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Acreditação</a></li>
+                        <li><a href="#">Nossa Equipe</a></li>
+                        <li><a href="#">Coleta Domiciliar</a></li>
+                        <li><a href="#">Orientação para Coleta</a></li>
+                        <li><a href="#">Check-ups</a></li>
                         <li><a href="#">Convênios</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                        <li><a href="#">Unidades</a></li>
                         <li><a href="#">Contato</a></li>
-                        <li><a href="#">Resultados</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
                     </ul>
                 </div>
                 <div class="footerRight">
@@ -185,9 +203,13 @@
                     <img src="assets/images/logos/dicq.png" alt="" srcset="">
                 </div>
             </div>
+            <div class="info">
+                <p>Todos os direitos reservados a Laboratório Bioclinica <?php echo date("Y"); ?></p>
+            </div>
         </div>
     </footer>
-
+    <script src="assets/js/jquery-3.3.1.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
